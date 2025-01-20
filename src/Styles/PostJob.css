@@ -1,0 +1,100 @@
+.post-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+  
+}
+.post-fields h1{
+    color: rgb(115, 19, 120);
+    font-size: 1.9rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 20px;
+    box-shadow: o 9px 9px rgba(9, 9, 9, 0.4) ;
+
+}
+.postjob-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+   
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 30px;
+    box-shadow: 0px 10px 13px rgba(9, 9, 9, 0.4);
+}
+.postjob-form input{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+
+}
+.postjob-form input:focus{
+    outline: blueviolet;
+    border: 3px solid blueviolet;
+}
+.postjob-form button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.add-btn{
+    background-color: blueviolet;
+}
+.add-btn:hover{
+    background-color: white;
+}
+.PostErrors{
+    color: rgb(237, 64, 64);
+  
+    font-size: 0.9rem;
+    
+}
+
+.add-btn:disabled{
+    background-color: gray;
+}
+
+.select-year{
+   
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.select-request{
+    box-shadow: 0 6px 5px 5px rgba(9, 9, 9, 0.4);
+    padding: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.select-year option{
+    padding: 10px;
+    border: 10px;
+}
+.status-message{
+    position: absolute;
+    color: green;
+    margin-top: 60px;
+    font-size: 1.2rem;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: o 9px 9px rgba(9, 9, 9, 0.4) ;
+    
+}
+.status-message.Error{
+    color: red;
+}
+.profile-error{
+    position: absolute;
+    top: 20px;
+    color: red;
+    font-size: 1.2rem;
+}

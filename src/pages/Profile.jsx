@@ -45,7 +45,7 @@ const Profile = () => {
       <p><strong>Name:</strong> {users.name} {users.last_name}</p>
       <p><strong>Skills:</strong> {users.skills}</p>
       <p><strong>Phone No:</strong> {users.phone_no}</p>
-      <p><stong>Email:</stong> {users.email}</p>
+      <p><strong>Email:</strong> {users.email}</p>
       <p><strong>Years of experience :</strong>{users.years_of_experience}years</p>
       
 

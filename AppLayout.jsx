@@ -34,7 +34,7 @@ const AppLayout = ()=>{
               <nav className="heading-title" >
                 <ul className="nav-list" >
                     <li>
-                        <Link to="/home" className="nav-link"> Home</Link>
+                        <Link to="/" className="nav-link"> Home</Link>
                     </li>
                     <li>
                         <Link to="/profile" className="nav-link" > Profile</Link>

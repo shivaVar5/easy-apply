@@ -26,7 +26,7 @@ const App = () => {
         <Route element={<AppLayout />}>
        
         <Route path='/profile' element = {<Profile />} />
-        <Route index path="/home" element={<Home />}/>
+        <Route index  element={<Home />}/>
          { <Route path='/signin' element={<SignIn />} /> }
         <Route path='login' element={<Login OnSignIn={handleSignIn} />} />
         <Route path='job-post' element={<PostJob />} />

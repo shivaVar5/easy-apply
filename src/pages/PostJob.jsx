@@ -147,7 +147,7 @@ const isFormValid = ()=>{
        name='title'
        onChange={handleOnChange}
         />
-        {!isValidate.title  && <p className='PostErrors'>
+        {!isValidate.title  && details.title !== "" &&<p className='PostErrors'>
          Job Name must be at least 4 characters long and only contain letters and spaces</p>}
 
       <input type='text' 
@@ -156,7 +156,7 @@ const isFormValid = ()=>{
       name='Company'
       onChange={handleOnChange} 
       />
-       {!isValidate.Company && <p className='PostErrors'>
+       {!isValidate.Company && details.Company !== "" && <p className='PostErrors'>
         Company name must be at least 4 characters long and only contain letters and spaces</p>}
 
 
@@ -166,7 +166,7 @@ const isFormValid = ()=>{
       name='Location'
       onChange={handleOnChange} 
        />
-      {!isValidate.Location && <p className='PostErrors'>
+      {!isValidate.Location && details.Location !== "" && <p className='PostErrors'>
       Company name must be at least 4 characters long and only contain letters and spaces</p>}
 
       
@@ -176,7 +176,7 @@ const isFormValid = ()=>{
       name='skills'
       onChange={handleOnChange} 
        />
-      {!isValidate.skills && <p className='PostErrors'>
+      {!isValidate.skills && details.skills !== "" && <p className='PostErrors'>
       Skills must be at least 4 characters long and only contain letters and spaces</p>}
 
 
@@ -187,7 +187,7 @@ const isFormValid = ()=>{
        name='WorkType'
        onChange={handleOnChange}
         />
-        {!isValidate.WorkType && <p className='PostErrors'>
+        {!isValidate.WorkType && details.WorkType !== "" && <p className='PostErrors'>
         Work Mode must be at least 4 characters long and only contain letters and spaces</p>}
   <div className='select-year'>
       <label htmlFor='select'className='select-request' > Please select experience required</label>
@@ -210,7 +210,7 @@ value={details.Experience}
   <option value=" more than 10">9 to 10 years</option>
   </select>
  </div>
-      {!isValidate.Experience && <p className='PostErrors'>
+      {!isValidate.Experience && details.Experience !== "" &&<p className='PostErrors'>
 Please select valid experience</p>}
   
       <button type='submit'className='add-btn' disabled={!isFormValid() || isPosting }>{isPosting? "Posting":"Add Job"}</button>

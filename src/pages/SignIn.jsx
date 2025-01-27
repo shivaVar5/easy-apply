@@ -46,7 +46,7 @@ const SignIn = () => {
                 setMessage("User doesn't exist, please register");
                 return;
             }
-            navigate("/home");
+            navigate("/jobs");
 
         }
         catch(err){
@@ -56,17 +56,18 @@ const SignIn = () => {
         
     }
 
-    const handleClick = (e)=>{
-        e.preventDefault();
-        navigate("/login");
-    }
+  
+  
   return (
     <div className='sign-page'>
-        <h1 className='easy-title'>Easy Apply</h1>
+        
         <div className='welcome'>
-          <h2 >Welcome To Easy Apply</h2>
-          <p className='desc1'>`{"Dream big, start small, and take that leap! Every great journey begins with a single step, and today is your day to rise above challenges and turn possibilities into realities. The future is yours—go claim it!"}`</p>
-          <p className='desc2'>A few more clicks to reach Your destination!</p>
+          
+          <p className='desc1'>{`Dream big, start small,
+           and take that leap! Every great journey begins with a 
+           single step, and today is your day to rise above challenges 
+           and turn possibilities into realities. The future is yours—go claim it!`}</p>
+          <p className='desc2'> A Few more clicks to reach your destination!</p>
         </div>
         
         {/* <img src={JobImage} /> */}
@@ -84,8 +85,8 @@ const SignIn = () => {
              name='password'
               />
             <div className='sign-button'>
-                <button type='submit'>Login</button>
-                <p className='account-desklgklifotjhhk'>Dont have an account?<strong className='register' onClick={handleClick} >Register</strong></p>
+                <button type='submit' >Login</button>
+            <p className='account-desc'>{`Don't have an account?`}<strong className='register-btn'  >Register</strong></p>
             </div>
             {message && <p className='login-error'>{message}</p>}
         </form>

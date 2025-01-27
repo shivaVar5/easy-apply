@@ -167,13 +167,13 @@ const navigate = useNavigate();
       last_name:false
     }))
 
-    navigate("/")
+    navigate("/signin")
     setTimeout(()=>setStatus(""), 5000);
   }
  
  const handleBackToLogin = (e)=>{
   e.preventDefault();
-  navigate("/");
+  navigate("/signin");
 
  }
  const validField = ()=>{
@@ -191,7 +191,7 @@ const navigate = useNavigate();
          name='name'
          onChange={handleOnChange}
           />
-          {!isValidDetails.name && 
+          {!isValidDetails.name && details.name !== ""  &&
           <p className='formErrors'>
             Name must be at least 4 characters long and only contain letters and spaces</p>}
             
@@ -200,7 +200,7 @@ const navigate = useNavigate();
           name='last_name'
           onChange={handleOnChange}
            />  
-          {!isValidDetails.last_name && 
+          {!isValidDetails.last_name && details.last_name !== "" &&
           <p className='formErrors'>
             Your lastname must be at least 4 characters long and only contain letters and spaces</p>}
 
@@ -209,7 +209,7 @@ const navigate = useNavigate();
           name='skills'
           onChange={handleOnChange}
           />
-          {!isValidDetails.skills && 
+          {!isValidDetails.skills && details.skills !== "" &&
           <p className='formErrors'>
             Your skills must be at least 4 characters long and only contain letters and spaces</p>}
        
@@ -219,7 +219,7 @@ const navigate = useNavigate();
           name='email'
           onChange={handleOnChange}
           />
-          {!isValidDetails.email && <p className='formErrors'>Email must be a valid email address</p>}
+          {!isValidDetails.email && details.email !== "" && <p className='formErrors'>Email must be a valid email address</p>}
 
 
         <input type='text'
@@ -228,7 +228,7 @@ const navigate = useNavigate();
          name='password'
          onChange={handleOnChange}
           />
-          {!isValidDetails.password && 
+          {!isValidDetails.password && details.password !== "" &&
           <p className='formErrors'>Password must be greater than 5 characters</p>}
 
           <input type='text'
@@ -237,7 +237,7 @@ const navigate = useNavigate();
          name='phone_no'
          onChange={handleOnChange}
           />
-          {!isValidDetails.phone_no && 
+          {!isValidDetails.phone_no && details.phone_no !== "" &&
           <p className='formErrors'>Password must be greater than 5 characters</p>}
 
           <div className='select-fields'>
@@ -257,7 +257,7 @@ const navigate = useNavigate();
           </div>
 
          <div className='form-buttons'>
-          <button onClick={handleBackToLogin} >Login</button>
+          <button onClick={handleBackToLogin} className="register" >Login</button>
           <button type='sumit' onClick={handleOnClick} className='register' disabled={!validField() || isPosting}>{isPosting?"Registering":"Register"}</button>
           
           </div>

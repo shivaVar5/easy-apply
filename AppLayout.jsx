@@ -1,54 +1,71 @@
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import "./index.css"
+import React from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
-import { FaBars, FaHome, FaUser, FaBriefcase, FaSignInAlt, FaPlusSquare, FaLinkedin } from 'react-icons/fa';
+import {  FaLinkedin } from 'react-icons/fa';
 
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import "./src/Styles/app.css"
+import svg from "./src/assets/icons8-logo.svg"
 
 
 const AppLayout = ()=>{
-    const[isSideBarOpen, setIsSideBarOpen] = useState(false);
-    
+    const navigate = useNavigate();
 
-    const toggleHandle =()=>{
-        setIsSideBarOpen(!isSideBarOpen);
+    const handleSignIn = ()=>{
+        navigate("/signin");
     }
-   
 
     return(
         <div className="app-layout" >
-             <header className="header" >
-             <h1 className='easy-title'>Easy Apply</h1>
+            <div className="heading">
+
+            <header className="header" >
+            <img src={svg} alt="svg" className="svg-logo"/>
+
+             <h1 className='easy-title'>
+                Easy Apply
+            </h1>
+            
            
             </header>
-            <div className={`main-content ${isSideBarOpen?"sidebar-open":""}`}>
-              <nav className={`sidebar ${isSideBarOpen?"open":"closed"}`}>
+
+            <div className="home-container" >
+
+              <nav className="heading-title" >
                 <ul className="nav-list" >
                     <li>
-                        <Link to="/home" className="nav-link"><FaHome className="icon" /> Home</Link>
+                        <Link to="/home" className="nav-link"> Home</Link>
                     </li>
                     <li>
-                        <Link to="/profile" className="nav-link" ><FaUser className="icon" /> Profile</Link>
+                        <Link to="/profile" className="nav-link" > Profile</Link>
                     </li>
                     <li>
-                        <Link to="/jobs" className="nav-link" ><FaBriefcase className="icon" /> Jobs</Link>
+                        <Link to="/jobs" className="nav-link" >Jobs</Link>
                     </li>
                     <li>
-                        <Link to="/job-post" className="nav-link"><FaPlusSquare className="icon"/> Post Job</Link>
+                        <Link to="/job-post" className="nav-link"> Post Job</Link>
                     </li>
                     
                 </ul>
                 </nav>
+                <button className="login-btn" onClick={()=>handleSignIn()}>Login</button>
+               
                 
+            </div>
+
+            
+           
+            </div>
+            
+            
             <main>
                 <Outlet className="content-area" />
 
             </main>
-            </div>
+
             
             <footer className="footer">
-               <p>Designed and Developed by @Shiva Varikuppala</p>
+               <p>Designed and Developed by @ V Shiva</p>
                 <p>© 2025 Job Portal. All rights reserved.</p>
                
                 <div className="social-icons" >

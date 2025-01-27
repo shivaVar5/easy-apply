@@ -19,6 +19,7 @@ const Profile = () => {
     queryFn:fetchUsers 
 
   })
+
   if (error){
     setMessage("Something went wrong, please check your connection!");
     return;

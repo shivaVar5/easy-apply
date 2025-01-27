@@ -8,10 +8,8 @@ import PostJob from './pages/PostJob'
 import JobList from './pages/JobList'
 import JobDetails from './pages/JobDetails'
 import ErrorPage from './pages/Error'
-import SignIn from './pages/SignIn'
-import "../index.css"
-
-
+import "../Style.css"
+import SignIn from "./pages/SignIn"
 const App = () => {
   const [signIn, setSignIn] = useState(false);
 
@@ -23,12 +21,13 @@ const App = () => {
     <div>
      <BrowserRouter >
       <Routes >
-      <Route index element={<SignIn />} />
-      <Route path='login' element = {<Login />} />
+      {/* <Route index element={<SignIn />} /> */}
+      {/* <Route path='login' element = {<Login />} /> */}
         <Route element={<AppLayout />}>
        
-        <Route path='profile' element = {<Profile />} />
-        <Route path='home' element={<Home />}/>
+        <Route path='/profile' element = {<Profile />} />
+        <Route index path="/home" element={<Home />}/>
+         { <Route path='/signin' element={<SignIn />} /> }
         <Route path='login' element={<Login OnSignIn={handleSignIn} />} />
         <Route path='job-post' element={<PostJob />} />
         <Route path='jobs' element={<JobList  signIn={signIn}/>} />

@@ -1,46 +1,53 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AppLayout from '../AppLayout'
-import Home from './pages/Home'
-import Profile from './pages/Profile'
-import Login from './pages/Login'
-import PostJob from './pages/PostJob'
-import JobList from './pages/JobList'
-import JobDetails from './pages/JobDetails'
-import ErrorPage from './pages/Error'
-import "../Style.css"
-import SignIn from "./pages/SignIn"
-const App = () => {
-  const [signIn, setSignIn] = useState(false);
+import React from "react";
+import AppLAyout from "./components/AppLayout";
+import {  createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Jobs from "./pages/Jobs";
+import Resume from "./pages/Resume";
+import Tracker from "./pages/Tracker";
+import   "./Styles/GlobalStyles.css"
 
-  const handleSignIn = ()=>{
-    setSignIn(true);
-}
 
-  return (
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<AppLAyout/>,
+    children:[
+      {
+        index:true,
+        element:<Home />
+
+      },
+      {
+        path:"upload-resume",
+        element:<Resume />
+
+      },
+
+      {
+        path:"about",
+        element:<About />
+      },
+      {
+        path:"jobs",
+        element:<Jobs />
+      },
+      {
+        path:"resume-tracker",
+        element:<Tracker />
+      }
+
+    ]
+
+  }
+]);
+
+const App = ()=>{
+  return(
     <div>
-     <BrowserRouter >
-      <Routes >
-      {/* <Route index element={<SignIn />} /> */}
-      {/* <Route path='login' element = {<Login />} /> */}
-        <Route element={<AppLayout />}>
-       
-        <Route path='/profile' element = {<Profile />} />
-        <Route index  element={<Home />}/>
-         { <Route path='/signin' element={<SignIn />} /> }
-        <Route path='login' element={<Login OnSignIn={handleSignIn} />} />
-        <Route path='job-post' element={<PostJob />} />
-        <Route path='jobs' element={<JobList  signIn={signIn}/>} />
-        <Route path='postjob' element={<JobDetails />} />
-
-        </Route>
-     
-        <Route path='*' element= {<ErrorPage  />} />
-
-     </Routes>
-   </BrowserRouter>
-  </div>
+      <RouterProvider router={router} />
+    </div>
   )
 }
-
-export default App
+export default App;

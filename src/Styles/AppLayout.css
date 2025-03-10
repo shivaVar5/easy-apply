@@ -1,0 +1,48 @@
+
+.AppLayout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+   
+}
+
+.header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #3a51e8;
+    padding: 8px;
+
+    
+
+}
+.nav-list{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  
+}
+.nav-list li{
+    display: inline;
+
+
+}
+.nav-list a{
+    text-decoration: none;
+    color: #f3f2f2;
+    font-weight: bold;
+   
+}
+.nav-list a:hover{
+    color:  #080808;
+}
+main{
+    flex: 1;
+}
+.footer{    
+    display: flex;
+    justify-content: space-evenly;  
+    position: relative;
+    background-color: #3a51e8;
+    padding: 10px;
+}
